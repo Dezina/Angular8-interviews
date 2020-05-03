@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="jumbotron">
+                <h3 class="text-center">
+                    Admit the patient in the nearby hospital
+                </h3>
+            </div>
+
+            <form class="form-horizontal" #patient="ngForm" (ngSubmit)="addPatient(patient.value)" autocomplete="off">
+                <fieldset>
+                    <legend>Patients info</legend>
+                    <div class="form-group ">
+                        <label for="inputName" class="col-lg-4 control-label">Name</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="name" ngModel #name="ngModel"
+                                placeholder="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputContact" class="col-lg-4 control-label">Contact</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="contact" ngModel #contact="ngModel"
+                                placeholder="Phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress" class="col-lg-4 control-label">Address</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="address" ngModel #address="ngModel"
+                                placeholder="Address">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select" class="col-lg-4 control-label">Select any one symptom</label>
+                        <div class="col-lg-8">
+                            <select class="form-control" name="symptom" ngModel #symptom="ngModel"
+                                aria-placeholder="Symptom">
+                                <option>Fever</option>
+                                <option>Breathlessness</option>
+                                <option>Cold</option>
+                                <option>Cough</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="textArea" class="col-lg-4 control-label">Case description</label>
+                        <div class="col-lg-8">
+                            <textarea class="form-control" rows="3" name="description" ngModel
+                                #description="ngModel"></textarea>
+                            <span class="help-block">Describe the patients condition
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPin" class="col-lg-4 control-label">Area Pincode</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="pincode" ngModel #pincode="ngModel"
+                                placeholder="Nearby area pincode" (keyup)="onKey($event)">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputt" class="col-lg-4 control-label">Area</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="area" [(ngModel)]="area">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hospital" class="col-lg-4 control-label">Hospital</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="hospital" [(ngModel)]="hospital">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ambulance" class="col-lg-4 control-label">Ambulance</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="ambulance" [(ngModel)]="ambulance">
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label class="col-lg-2 control-label">Radios</label>
+                        <div class="col-lg-10">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                        checked="">
+                                    Option one is this
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    Option two can be something else
+                                </label>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="form-group">
+                        <button type="reset" class="btn btn-danger">Cancel</button>
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </fieldset>
+            </form>
+            <!-- <input (keyup)="onKey($event)">
+            <p>{{pin}}</p>
+            <p>{{area}}</p>
+            <p>{{hospital}}</p>
+            <p>{{ambulance}}</p> -->
+        </div>
+    </div>
+</div>

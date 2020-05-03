@@ -1,0 +1,54 @@
+<div class="row" *ngIf="status">
+    <div class="col-md-6 col-md-offset-3">
+        <h3 class="well text-center">
+            Login
+        </h3>
+        <form #login="ngForm" (ngSubmit)="onLogin(login.value)" autocomplete="off">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="username" ngModel #username="ngModel" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" ngModel #password="ngModel" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary">
+
+                <input (click)="toggleStatus()" class="btn btn-default pull-right" value="Signup">
+                <p style="padding: 5px;" class="pull-right">New User?</p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row" *ngIf="!status">
+    <div class="col-md-8 col-md-offset-2">
+        <h3 class="well text-center">
+            Sign up
+        </h3>
+        <form #signup="ngForm" (ngSubmit)="onSignup(signup.value)">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="username" ngModel #username="ngModel" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" ngModel #password="ngModel" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="number" name="phone" ngModel #phone="ngModel" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Signup" class="btn btn-info">
+                <button (click)="toggleStatus()" class="btn btn-link">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
