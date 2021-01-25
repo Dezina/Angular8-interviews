@@ -1,12 +1,206 @@
-.zoom {
+.sticky {
+    background: #fff;
+    box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+}
+.home-bg {
+  /* background: linear-gradient(to bottom, #c2e59c, #64b3f4); */
+    background: -webkit-linear-gradient(to left,#c2e59c, #64b3f4);
+	  background: -moz-linear-gradient(top left,  #c2e59c, #64b3f4);
+    background: linear-gradient(top left,  #c2e59c, #64b3f4);
+}
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.navbar-fixed-top {
+  margin-top: 50px;
+  background-color: rgb(207, 190, 190);
+}
+
+ .logo {
+     margin: -25px 0 0 0; float: left;
+ }
+
+#dropdown1:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    min-width: 650px;
+  
+ }
+
+#dropdown2:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    min-width: 150px;
+   
+ }
+
+.dropdown-menu li a {
+	padding: 5px 15px;
+	font-weight: 300;
+}
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  
+  transform: translate(-50%, 0) !important;
+}
+/* @media (max-width: 767px) {
+	.dropdown-menu.multi-column {
+		min-width: 240px !important;
+		overflow-x: hidden;
+	}
+} */
+
+
+.multi-column-dropdown, .dropdown-menu {
+	list-style: none;
+}
+.multi-column-dropdown, .dropdown-menu li a {
+	display: block;
+	clear: both;
+	line-height: 1.428571429;
+	color: rgb(3, 3, 3);
+	white-space: normal;
+}
+ .dropdown-menu li a:hover {
+     color: rgb(3, 3, 3);
+     background-color: aqua;
+     text-decoration: none;
+ }
+ .footer{
+     list-style: none;
+ }
+ .footer li:hover {
+     text-decoration: none;
+     background-color: none;
+ }
+
+.fa-ul li, i, a {
   padding: 10px;
-  background-color: rgb(157, 218, 157);
+}
+
+.fa-ul i, a {
+color: green;
+}
+
+.section1 {
+background-color: lightblue;
+padding-bottom: 10px;
+padding-top: 10px;
+height: 450px;
+}
+.section1 p {
+  padding-top: 15px;
+}
+.sec-p {
+letter-spacing: 2px;
+font-size: 18px;
+padding: 20px;
+}
+.sec-p-heading {
+  padding-top: 10px;
+letter-spacing: 1px;
+font-size: 15px;
+text-align: center;
+}
+.section2 {
+background-color: rgb(216, 222, 224);
+/* padding-bottom: 10px;
+padding-top: 10px; */
+height: 350px;
+}
+.section3 {
+background-color: rgb(206, 240, 255);
+padding-bottom: 10px;
+padding-top: 10px;
+height: 600px;
+}
+.section4 {
+background-color: rgb(212, 215, 216);
+padding-bottom: 10px;
+padding-top: 10px;
+height: 700px;
+}
+.section5 {
+background-color: rgb(203, 221, 198);
+padding-bottom: 10px;
+padding-top: 10px;
+height: 500px;
+}
+.section6 {
+background-color: rgb(193, 236, 182);
+padding-bottom: 10px;
+padding-top: 10px;
+height: 500px;
+}
+.section7 {
+background-color: rgb(163, 255, 140);
+padding-bottom: 10px;
+padding-top: 10px;
+height: 570px;
+}
+.zoom {
   transition: transform .2s; /* Animation */
-  width: 160px;
-  height: 160px;
-  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .zoom:hover {
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  background-color: rgb(234, 241, 234);
+  padding-bottom: 20px;
+  width: 400px;
+}
+.lead {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(63, 60, 60);
+}
+.sec-btn {
+  color: #fff;
+  letter-spacing: 2px;
+  word-spacing: normal;
+  text-align: center;
+}
+.sec-btn:hover {
+  color: #fff;
+  letter-spacing: 2px;
+  word-spacing: normal;
+  text-align: center;
+  background-color: rgb(46, 211, 46);
+}
+.vl {
+  border: 1px solid green;
+  height: 500px;
+  width: 2px;
+  margin-left: 200px;
+}
+.vf {
+  border: 1px solid rgb(57, 70, 57);
+  height: 300px;
+  width: 2px;
+  margin-left: 50px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.footer {
+  padding: 30px 0;
+}
+h4 {
+  padding-top: 15px;
+}
+i {
+  width: 50px;
+  height: 50px;
+  color: blueviolet;
 }

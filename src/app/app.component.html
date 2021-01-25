@@ -1,7 +1,8 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand" routerLink="/">Covid hospitals</a>
+      <!-- <a href="#" class="navbar-brand" routerLink="/"><img src="./images/search.png" alt="" width="100" height="100"
+          class="logo"></a> -->
       <button class="navbar-toggle" data-toggle="collapse" data-target="#myMenu">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -9,7 +10,7 @@
       </button>
     </div>
     <div class="navbar-collapse collapse" id="myMenu">
-      <ul class="nav navbar-nav" *ngIf="status">
+      <!-- <ul class="nav navbar-nav" *ngIf="status">
         <li><a href="#" routerLink="/home">Home</a></li>
 
       </ul>
@@ -22,12 +23,291 @@
       <ul class="navbar-nav navbar-right nav" *ngIf="status">
         <li><strong>Hi, {{ username }}</strong></li>
         <li><a href="#" (click)="logout()">Logout</a></li>
+      </ul> -->
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
+        <li id="dropdown1">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products <span
+              class="caret"></span></a>
+          <ul class="dropdown-menu columns-3 dropdown-menu-center" id="dropdown-menu1" role="menu">
+            <div class="row">
+              <div class="col-md-12">
+                <li class="divider"></li>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown" role="menu">
+
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicedesk</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Serviceservice</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicecaller</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicemarketer</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicesuccess</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown" role="menu">
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicesales</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicechat</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Serviceteam</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Serviceconnect</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown" role="menu">
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Freddy AI for CX</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicerelease</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Serviceiping</a></li>
+                  <li><a href="#"><img
+                        src="https://d3h0owdjgzys62.cloudfront.net/images/394/live_cover_art/thumb2x/FD_Marketplace_dew.png"
+                        width="20px" height="20px" alt=""> Servicestatus</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12">
+                <ul class="footer">
+                  <li class="divider"></li>
+                  <li>Explore reServiceing apps & integrations for Serviceworks products<a href="#">Visit the
+                      marketplace <i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                  <li class="divider"></li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+        </li>
+
+        <li><a href="#">Platform</a></li>
+
+        <li id="dropdown2">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Comapany <span
+              class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-center" role="menu">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Board of Directors</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Affiliates</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Support</a></li>
+
+        <li id="dropdown1">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Country<span
+              class="caret"></span></a>
+          <ul class="dropdown-menu columns-3 dropdown-menu-center" id="dropdown-menu1" role="menu">
+            <div class="row">
+              <div class="col-sm-12">
+                <ul class="footer">
+                  <li class="divider"></li>
+                  <li class="text-success">selected country
+                    <ul class="breadcrumb">
+                      <li class="active">{{txtValue}}</li>
+                    </ul>
+                  </li>
+                  <li class="divider"></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown" role="menu">
+
+                  <li><a routerLink="" (click)="logClick( 'India' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt="">
+                      India</a></li>
+                  <li><a routerLink="" (click)="logClick( 'China' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> China</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Nepal' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Nepal</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Bhutan' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Bhutan</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown" role="menu">
+                  <li><a routerLink="" (click)="logClick( 'Iran' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Iran</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Israel' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Israel</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Egypt' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Egypt</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Africa' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Africa</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown" role="menu">
+                  <li><a routerLink="" (click)="logClick( 'USA' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> USA</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Mexico' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Mexico</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Russia' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Russia</a></li>
+                  <li><a routerLink="" (click)="logClick( 'Japan' )"><img
+                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/world-374-658467.png" width="20px"
+                        height="20px" alt=""> Japan</a></li>
+                </ul>
+              </div>
+
+              <div class="col-sm-12">
+                <ul class="footer">
+                  <li class="divider"></li>
+                </ul>
+              </div>
+
+            </div>
+          </ul>
+        </li>
       </ul>
+
     </div>
   </div>
 </nav>
 
-<div class="container-fluid">
+<!-- navbar 2 main sticky -->
 
+<nav class="navbar header animated fadeInDown" id="navbar2">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand" routerLink="/">Angular 8
+        <!-- <img
+          src="https://www.enterprisetimes.co.uk/wp-content/uploads/2019/01/ServiceworksIncLogoNIB-286x160.png" alt=""
+          width="100" height="60" class="logo"> -->
+      </a>
+      <button class="navbar-toggle" data-toggle="collapse" data-target="#myMenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="myMenu">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <!-- <li>
+          <form class="example-form">
+            <mat-form-field appearance="fill">
+              <mat-label>Select any user</mat-label>
+              <mat-select [(ngModel)]="item" name="item" (ngModelChange)="changeIdentificationOptions($event)">
+                <mat-option *ngFor="let item of users" [value]="item">
+                  {{ item }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </li> -->
+
+        <li id="dropdown2">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Features <span
+              class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-center" role="menu">
+            <li><a href="#">features 1</a></li>
+            <li><a href="#">features 2</a></li>
+            <li><a href="#">features 3</a></li>
+            <li><a href="#">features 4</a></li>
+            <li><a href="#">features 5</a></li>
+            <li><a href="" class="btn btn-warning">Add</a></li>
+
+          </ul>
+        </li>
+
+        <li><a href="#">Pricing</a></li>
+
+        <li id="dropdown2">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Solutions <span
+              class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-center" role="menu">
+            <li><a href="#">solution 1</a></li>
+            <li><a href="#">solution 2</a></li>
+            <li><a href="#">solution 3</a></li>
+            <li><a href="#">solution 4</a></li>
+            <li><a href="#">solution 5</a></li>
+            <li><a href="" class="btn btn-warning">Add</a></li>
+
+          </ul>
+        </li>
+
+        <li id="dropdown2">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Resources <span
+              class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-center" role="menu">
+            <li><a href="#">res 1</a></li>
+            <li><a href="#">res 2</a></li>
+            <li><a href="#">res 3</a></li>
+            <li><a href="#">res 4</a></li>
+            <li><a href="#">res 5</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#" routerLink="/apps">Apps</a></li>
+        <li><a href="#" routerLink="/userpage">Users</a></li>
+        <li><a href="#" routerLink="/todo">Todo</a></li>
+        <li *ngIf="!status"><a href="#" routerLink="/login">Login</a></li>
+
+        <li *ngIf="status"><a href="#" (click)="logout()"><span class="label label-primary">Hi, {{username}}</span>
+            Logout</a></li>
+
+        <li><a href="#" routerLink="/signup" class="btn btn-success btn-sm sec-btn">Signup</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<!-- <h1 translate>Title</h1>
+
+<h1 translate>Title</h1>
+
+<p [translate]="'Intro'">Intro</p>
+<p>
+  {{ 'Intro' | translate }}
+</p>
+
+<br />
+
+
+<button (click)="switchLanguage('en')">en</button>
+
+<button (click)="switchLanguage('fr')">fr</button> -->
+
+<div class="container-fluid">
   <router-outlet></router-outlet>
 </div>

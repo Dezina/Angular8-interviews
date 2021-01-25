@@ -1,77 +1,142 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../services/users.service';
-import { Patient } from '../model/patient.model';
+import { WebService } from '../services/web.service';
+
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { startWith, map } from 'rxjs/operators'
 import { Router } from '@angular/router';
 
+import { OrderPipe } from 'ngx-order-pipe';
+
 @Component({
-  selector: 'app-userpage',
+  selector: 'app-userpage', 
   templateUrl: './userpage.component.html',
   styleUrls: ['./userpage.component.css']
 })
 export class UserpageComponent implements OnInit {
-  pin: any = '';
-  area: any;
-  hospital: any;
-  ambulance: any;
-  batman: any = ['AMB1', 'AMB2'];
-  catwoman: any = ['AMC1', 'AMC2'];
-  superman: any = ['AMS1', 'AMS2'];
-  constructor(private obj: UsersService, private router: Router) { }
+
+  users: any[] = [];
+
+  user: any;
+
+  arr: any[] = [];
+
+  webdata: any[] = [];
+
+  options: any[] = [];
+
+  myControl = new FormControl();
+
+  finaldata: any[] = [];
+
+  status: boolean = true;
+
+  txtValue: any;
+
+  filteredOptions: Observable<string[]>;
+
+
+  constructor(private obj: WebService, private router: Router) { }
+
+  private _filter(value: string): any[] {
+
+    const filterValue = value.toLowerCase();
+
+    this.obj.getusers().subscribe(
+      (res: any) => {
+        console.log(res.data);
+        //this.options = res.data.first_name;
+        for (let i = 0; i < res.data.length; i++) {
+          console.log(res.data[i].first_name);
+          this.options.push(res.data[i].first_name);
+
+        }
+
+      });
+
+    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+  }
+
 
   ngOnInit() {
+    this.obj.getusers().subscribe(
+      (res: any) => {
 
-    //check if there is no user logged in
-    if (localStorage.getItem('err_code') === null && localStorage.getItem('useremail') === null) {
-      this.router.navigate(['/login']);
-    }
-  }
+        for (let i = 0; i < res.data.length; i++) {
 
-  shuffle(array: any) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array[0];
-  }
+          this.webdata.push(res.data[i]);
 
-  onKey(event: any) {
-    this.pin = event.target.value;
-    if (this.pin === '403200') {
-      this.area = 'North';
-      this.hospital = 'Batman Hospital';
-      this.ambulance = this.shuffle(this.batman);
-    }
-    else if (this.pin === '403201') {
-      this.area = 'East';
-      this.hospital = 'Robin Hospital';
-      this.ambulance = 'AMR1';
-    }
-    else if (this.pin === '403202') {
-      this.area = 'South';
-      this.hospital = 'Catwoman Hospital';
-      this.ambulance = this.shuffle(this.catwoman);
-    }
-    else if (this.pin === '403203') {
-      this.area = 'West';
-      this.hospital = 'Superman Hospital';
-      this.ambulance = this.shuffle(this.superman);
-    }
-  }
+          this.users.push(res.data[i].first_name);
+          // console.log(this.webdata);
+        }
+        console.log(this.users);
+      },
 
-  addPatient(data: Patient) {
-    console.log(data);
-    this.obj.addPatient(data).subscribe((res: any) => {
-      console.log(res);
-      alert(res.message);
-      this.router.navigate(['/dashboard']);
-    },
-      err => {
+      (err: any) => {
         console.log(err);
+      }
+    );
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+
+  }
+
+
+  selectedOption(event) {
+    const selectedValue = event.option.value;
+
+    this.obj.getusers().subscribe(
+      (res: any) => {
+        for (let i = 0; i < res.data.length; i++) {
+
+          if (res.data[i].first_name == selectedValue) {
+
+            //this.finaldata.push(res.data[i]);
+            this.router.navigate(['/details', { id: res.data[i].id }]);
+
+          }
+
+        }
+
+        console.log(this.finaldata);
       });
+
+    this.status = !this.status;
+  }
+
+  selectedUser(value) {
+
+    this.user = value;
+    console.log(this.user);
+
+    this.obj.getusers().subscribe(
+      (res: any) => {
+        for (let i = 0; i < res.data.length; i++) {
+
+          if (res.data[i].first_name == this.user) {
+
+            this.router.navigate(['/details', { id: res.data[i].id }]);
+
+          }
+
+        }
+
+      });
+
+    this.status = !this.status;
+  }
+
+  onTextChange(value) {
+    this.txtValue = value;
+    console.log(this.txtValue);
+
+    if (this.txtValue == '') {
+      location.reload();
+    }
+
   }
 
 }
