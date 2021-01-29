@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row">
+        <span class="pull-right">
+            <button class="btn btn-info" (click)="addTodo()">
+                Add new
+            </button>
+        </span>
+        <!--DISPLAY-->
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Author</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active" *ngFor="let data of webdata">
+                    <td>{{data.author}}</td>
+                    <td>
+                        <i class="space" *ngFor="let list of data.todolist">{{list.object}}</i>
+                    </td>
+                    <td><i class="fas fa-edit" (click)="edit(data._id)"></i></td>
+                    <td><i class="fas fa-trash-alt" (click)="delete(data._id)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--ADD CODE-->
+    <div class="row">
+        <form #add="ngForm" (ngSubmit)="onSubmit(add.value)">
+            <div class="form-group col-md-6">
+                <label for="">Author</label>
+                <input type="text" name="author" #author="ngModel" ngModel class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+
+    <!--UPDATE CODE-->
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 card" *ngFor="let data of record">
+            <form (ngSubmit)="onUpdate(data)">
+                <div class="form-group col-md-6">
+                    <label for="">Author</label>
+                    <input type="text" class="form-control highlight" name="author" [(ngModel)]="data.author" required>
+                </div>
+
+                <div class="form-group col-md-8 col-md-offset-2">
+                    <label for="">Todo list</label>
+                    <div class="form-group col-md-4" *ngFor="let list of todo; let i = index;">
+                        <input type="text" class="form-control highlight" [name]="'todolist' + i"
+                            [(ngModel)]="list.object">
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <input type="submit" class="btn btn-primary" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
