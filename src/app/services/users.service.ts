@@ -15,8 +15,8 @@ export class UsersService {
   userSignup(data: User) {
     const body = {
       email: data.username,
-      password: data.password,
-      phone: data.phone
+      phone: data.phone,
+      password: data.password
     };
     return this.http.post(this.url + '/rest/api/users/signup', body);
   }
