@@ -17,9 +17,12 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(@Inject(DOCUMENT) document) { }
+  constructor(@Inject(DOCUMENT) document) {
+  
+  }
 
   ngOnInit() {
+
   }
 
   @HostListener('window:scroll', ['$event'])

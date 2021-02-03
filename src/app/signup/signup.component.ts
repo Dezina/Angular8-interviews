@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
       (res: any) => {
         console.log(res);
         alert("Created new sign in, now you can login...");
-        this.router.navigate(['/']);
+        this.router.navigate(['/login']);
       },
       err => {
         console.log(err);

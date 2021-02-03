@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
 
         console.log('user', data);
 
-        this.router.navigate(['/home']);
+        //this.router.navigate(['/home']);
+        window.location.replace("http://localhost:4200/home")
       },
       err => {
         console.log(err);
