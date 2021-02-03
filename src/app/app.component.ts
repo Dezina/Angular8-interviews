@@ -5,24 +5,56 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators'
 import { Router } from '@angular/router';
+import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  styles: [
+    `.ball {
+      position: relative;
+      background-color: brown;
+      border-radius: 50%;
+      top: 200px;
+      height: 30px;
+      width: 30px;
+    }`
+  ],
+
+  animations: [
+    trigger('animateArc', [
+      state('true', style({
+        left: '400px',
+        top: '200px'
+      })),
+      state('false', style({
+        left: '0',
+        top: '200px'
+      })),
+      transition('false => true', animate('1000ms linear', keyframes([
+        style({ left: '0', top: '200px', offset: 0 }),
+        style({ left: '200px', top: '100px', offset: 0.50 }),
+        style({ left: '400px', top: '200px', offset: 1 })
+      ]))),
+      transition('true => false', animate('1000ms linear', keyframes([
+        style({ left: '400px', top: '200px', offset: 0 }),
+        style({ left: '200px', top: '100px', offset: 0.50 }),
+        style({ left: '0', top: '200px', offset: 1 })
+      ])))
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
-  title = 'Freshdesk';
+  title = 'ServiceDesk';
   status: any;
   dashboard: any = false;
 
   username: any;
   phone: any;
   txtValue: any;
-
-  // users: any[] = [];
-
-  // user: any;
+  arc: string = 'false';
 
   constructor(private obj: WebService, private router: Router) {
 
@@ -33,45 +65,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.obj.getusers().subscribe(
-    //   (res: any) => {
-
-    //     for (let i = 0; i < res.data.length; i++) {
-
-    //       this.users.push(res.data[i].first_name);
-
-    //     }
-    //     console.log(this.users);
-    //   },
-
-    //   (err: any) => {
-    //     console.log(err);
-    //   }
-    // );
-
   }
-
-  // changeIdentificationOptions(value) {
-
-  //   this.user = value;
-  //   console.log(this.user);
-
-  //   this.obj.getusers().subscribe(
-  //     (res: any) => {
-  //       for (let i = 0; i < res.data.length; i++) {
-
-  //         if (res.data[i].first_name == this.user) {
-
-  //           this.router.navigate(['/details', { id: res.data[i].id }]);
-
-  //         }
-
-  //       }
-
-  //     });
-
-  //   this.status = !this.status;
-  // }
 
   auth() {
     console.log('app', localStorage.getItem('err_code'));
@@ -87,6 +81,7 @@ export class AppComponent implements OnInit {
     }
   }
 
+  // LOGOUT
   logout() {
     localStorage.removeItem('err_code');
     localStorage.removeItem('useremail');
@@ -99,6 +94,11 @@ export class AppComponent implements OnInit {
     console.log(value);
     this.txtValue = value;
 
+  }
+
+  // ANIMATION
+  toggleBounce() {
+    this.arc = this.arc === 'false' ? 'true' : 'false';
   }
 
 }

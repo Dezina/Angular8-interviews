@@ -72,3 +72,21 @@
  #navbar2 a {
 color: gray;
  }
+
+ .logout {
+     text-align: center;
+ }
+
+ .btn-logout {
+     background-color: rgb(223, 185, 196);
+     border-radius: 20px;
+     color: black;
+     font-weight: bold;
+     font-size: 13px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     width: 100px;
+     height: 30px;
+     text-align: center;
+     text-decoration: none;
+     margin: auto;
+ }
